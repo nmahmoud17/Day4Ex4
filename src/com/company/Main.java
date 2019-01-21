@@ -34,15 +34,19 @@ public class Main {
            } else if (userInput == 2) {
                System.out.println("Enter the amount you would like to withdraw:");
                double withdrawalAmount = reader.nextDouble();
-               System.out.println(accountBalance-withdrawalAmount);
+                    if (withdrawalAmount>accountBalance) {
+                        System.out.println ("Error! Your withdrawal amount is too high");
+                    } else {
+                        System.out.println(accountBalance-withdrawalAmount);
+                    }
 
                System.out.println("Would you like to another transaction? Y or N");
-               answer = reader.next();
-               if (answer.equals("Y")){
-                   runAgain = true;
-               }else {
-                   runAgain = false;
-               }
+                    answer = reader.next();
+                    if (answer.equals("Y")){
+                        runAgain = true;
+                    }else {
+                        runAgain = false;
+                    }
 
            } else if (userInput ==3) {
                System.out.println("Enter the amount you would like to deposit:");
